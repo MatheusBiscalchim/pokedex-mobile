@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ButtonMainMenu">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:drawableTint">@color/poke_white</item>
+        <item name="android:fontFamily">@font/nunito_sans</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingTop">15dp</item>
+        <item name="android:paddingBottom">15dp</item>
+        <item name="android:paddingLeft">35dp</item>
+        <item name="android:paddingRight">35dp</item>
+    </style>
+    <style name="ButtonTypes">
+        <item name="android:layout_height">75dp</item>
+        <item name="android:layout_width">175dp</item>
+        <item name="android:paddingRight">0dp</item>
+        <item name="android:drawablePadding">0dp</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+</resources>

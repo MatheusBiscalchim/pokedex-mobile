@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/poke_white">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:paddingTop="20dp"
+        android:orientation="vertical"
+        android:id="@+id/types_top">
+        <Button
+            android:id="@+id/button_type_back"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:drawableLeft="@drawable/round_keyboard_arrow_left_24"
+            android:text="Pokemons"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_sans"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:backgroundTint="@color/poke_white"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_input"
+            android:backgroundTint="@color/white"
+            android:padding="10dp"
+            android:hint="Search"
+            android:fontFamily="@font/nunito_sans"
+            android:drawableLeft="@drawable/round_search_24"
+            android:drawableTint="#757574"
+            android:drawablePadding="8dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"/>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvPokemons"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        tools:listitem="@layout/pokemon_item"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        android:padding="8dp"
+        app:spanCount="2"
+        app:layout_constraintTop_toBottomOf="@id/types_top"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

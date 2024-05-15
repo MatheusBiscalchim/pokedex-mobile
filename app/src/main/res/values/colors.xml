@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="green">#FF00FF00</color>
+    <color name="poke_white">#FFF9F9F9</color>
+    <color name="poke_red">#FFFF5656</color>
+    <color name="poke_red2">#ff6767</color>
+    <color name="poke_green">#FF8ddb8a</color>
+    <color name="poke_orange">#FFffad76</color>
+    <color name="poke_blue">#FF92b8f7</color>
+    <color name="poke_normal">#FF9099A1</color>
+    <color name="poke_fire">#FFFF9C54</color>
+    <color name="poke_fighting">#FFCE4069</color>
+    <color name="poke_water">#FF4D90D5</color>
+    <color name="poke_flying">#FF92AADE</color>
+    <color name="poke_grass">#FF63BB5B</color>
+    <color name="poke_poison">#FFAB6AC8</color>
+    <color name="poke_eletric">#FFF3D23B</color>
+    <color name="poke_ground">#FFD97746</color>
+    <color name="poke_psychic">#FFF97176</color>
+    <color name="poke_rock">#FFC7B78B</color>
+    <color name="poke_ice">#FF74CEC0</color>
+    <color name="poke_bug">#FF90C12C</color>
+    <color name="poke_dragon">#FF096DC4</color>
+    <color name="poke_ghost">#FF5269AC</color>
+    <color name="poke_dark">#FF5A5366</color>
+    <color name="poke_steel">#FF5A8EA1</color>
+    <color name="poke_fairy">#FFEC8FE6</color>
+</resources>

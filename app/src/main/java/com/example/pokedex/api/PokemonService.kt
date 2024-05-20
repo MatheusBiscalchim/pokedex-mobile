@@ -13,4 +13,7 @@ interface PokemonService {
 
     @GET("pokemon/{number}")
     fun getPokemon(@Path("number") number : Int): Call<PokemonApiResult>
+
+    @GET("type/{tipo}")
+    fun getTypesPokemon(@Path("tipo") tipo: String): Call<PokemonApiResult>
 }

@@ -16,19 +16,35 @@ class DatabaseHelper(private val context: Context):
         private const val COLUMN_ID = "id"
         private const val COLUMN_USERNAME = "username"
         private const val COLUMN_PASSWORD = "password"
+        private const val TABLE_NAME2 = "favorites"
+        private const val COLUMN_POKEMON_ID = "pokemon_id"
     }
 
     override fun onCreate(db: SQLiteDatabase?) {
-        val createTableQuery = ("CREATE TABLE $TABLE_NAME ("+
-        "$COLUMN_ID INTEGER PRIMARY KEY AUTOINCREMENT, "+
-        "$COLUMN_USERNAME TEXT, "+
-        "$COLUMN_PASSWORD TEXT)")
-        db?.execSQL(createTableQuery)
+        val createUserTableQuery = (
+                "CREATE TABLE $TABLE_NAME (" +
+                        "$COLUMN_ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                        "$COLUMN_USERNAME TEXT, " +
+                        "$COLUMN_PASSWORD TEXT)"
+                )
+        db?.execSQL(createUserTableQuery)
+
+        val createTableQueryFavoritos = (
+                "CREATE TABLE $TABLE_NAME2 (" +
+                        "$COLUMN_ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                        "$COLUMN_POKEMON_ID TEXT)"
+                )
+        db?.execSQL(createTableQueryFavoritos)
     }
+
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
         val dropTableQuery = "DROP TABLE IF EXISTS $TABLE_NAME"
         db?.execSQL(dropTableQuery)
+        onCreate(db)
+
+        val dropTableQueryFavoritos = "DROP TABLE IF EXISTS $TABLE_NAME2"
+        db?.execSQL(dropTableQueryFavoritos)
         onCreate(db)
     }
 
@@ -41,6 +57,15 @@ class DatabaseHelper(private val context: Context):
         return db.insert(TABLE_NAME, null, values)
     }
 
+    fun insertFavorite(id: String): Long{
+        val values = ContentValues().apply {
+            put(COLUMN_POKEMON_ID, id)
+        }
+        val db = writableDatabase
+        return db.insert(TABLE_NAME2, null, values)
+    }
+
+
     fun readUser(username: String, password: String): Boolean {
         val db = readableDatabase
         val selection = "$COLUMN_USERNAME = ? AND $COLUMN_PASSWORD = ?"
@@ -51,6 +76,25 @@ class DatabaseHelper(private val context: Context):
         cursor.close()
         return userExists
 
+    }
+
+
+    fun readFavorite(id: String): Boolean {
+        val db = readableDatabase
+        val selection = "$COLUMN_POKEMON_ID = ? "
+        val selectionArgs = arrayOf(id)
+        val cursor = db.query(TABLE_NAME2, null,selection, selectionArgs, null, null, null)
+
+        val userExists = cursor.count >0
+        cursor.close()
+        return userExists
+    }
+
+    fun deleteFavorite(pokemonId: String): Int {
+        val db = writableDatabase
+        val selection = "$COLUMN_POKEMON_ID = ?"
+        val selectionArgs = arrayOf(pokemonId)
+        return db.delete(TABLE_NAME2, selection, selectionArgs)
     }
 
 }

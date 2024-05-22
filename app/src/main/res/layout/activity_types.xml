@@ -60,11 +60,13 @@
                 android:backgroundTint="@color/poke_red"
                 android:paddingRight="5dp"/>
             <Button
+                android:id="@+id/poke_type_normal"
                 style="@style/ButtonTypes"
                 android:text="Normal"
                 android:drawableRight="@drawable/pokemon_type_icon_normal"
                 android:backgroundTint="@color/poke_normal"/>
             <Button
+                android:id="@+id/poke_type_fire"
                 style="@style/ButtonTypes"
                 android:text="Fire"
                 android:drawableRight="@drawable/pokemon_type_icon_fire"

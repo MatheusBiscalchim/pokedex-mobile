@@ -11,7 +11,9 @@ class PokemonViewModel : ViewModel() {
 
     init {
         Thread(Runnable {
-            loadPokemons()
+           loadPokemons()
+//            loadPerFire()
+//            laodPerGrass()
         }).start()
     }
 
@@ -45,17 +47,18 @@ class PokemonViewModel : ViewModel() {
         }
     }
 
-    private fun loadPokemonsTypes() {
+
+    private fun loadPerFire() {
         val pokemonsApiResult = PokemonRepository.listPokemons()
 
         pokemonsApiResult?.results?.let { results ->
             val pokemonList = mutableListOf<Pokemon?>()
             results.forEach { pokemonResult ->
-                val tipo = pokemonResult.url
-                    .replace("https://pokeapi.co/api/v2/type/", "")
-                    .replace("/", "")
+                val number = pokemonResult.url
+                    .replace("https://pokeapi.co/api/v2/pokemon/", "")
+                    .replace("/", "").toInt()
 
-                val pokemonApiResult = PokemonRepository.getTypesPokemon(tipo)
+                val pokemonApiResult = PokemonRepository.getPokemon(number)
 
                 pokemonApiResult?.let {
                     val pokemon = Pokemon(
@@ -68,7 +71,41 @@ class PokemonViewModel : ViewModel() {
                         pokemonApiResult.weight,
                         pokemonApiResult.stats
                     )
-                    pokemonList.add(pokemon)
+                    if (pokemon.types.any { it.name == "fire" }) {
+                        pokemonList.add(pokemon)
+                    }
+                }
+            }
+            pokemons.postValue(pokemonList)
+        }
+    }
+
+    private fun loadPerGrass() {
+        val pokemonsApiResult = PokemonRepository.listPokemons()
+
+        pokemonsApiResult?.results?.let { results ->
+            val pokemonList = mutableListOf<Pokemon?>()
+            results.forEach { pokemonResult ->
+                val number = pokemonResult.url
+                    .replace("https://pokeapi.co/api/v2/pokemon/", "")
+                    .replace("/", "").toInt()
+
+                val pokemonApiResult = PokemonRepository.getPokemon(number)
+
+                pokemonApiResult?.let {
+                    val pokemon = Pokemon(
+                        pokemonApiResult.id,
+                        pokemonApiResult.name,
+                        pokemonApiResult.types.map { typeSlot ->
+                            typeSlot.type
+                        },
+                        pokemonApiResult.height,
+                        pokemonApiResult.weight,
+                        pokemonApiResult.stats
+                    )
+                    if (pokemon.types.any { it.name == "grass" }) {
+                        pokemonList.add(pokemon)
+                    }
                 }
             }
             pokemons.postValue(pokemonList)

@@ -31,9 +31,8 @@ object PokemonRepository {
         return call.execute().body()
     }
 
-    fun getTypesPokemon(tipo: String): PokemonApiResult? {
-        val call = service.getTypesPokemon(tipo)
-        return call.execute().body()
-    }
-
+//    fun getTypesPokemon(tipo: String ): PokemonApiResult? {
+//        val call = service.getTypesPokemon(tipo)
+//        return call.execute().body()
+//    }
 }

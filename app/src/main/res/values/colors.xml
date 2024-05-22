@@ -27,4 +27,23 @@
     <color name="poke_dark">#FF5A5366</color>
     <color name="poke_steel">#FF5A8EA1</color>
     <color name="poke_fairy">#FFEC8FE6</color>
+    <!---->
+    <color name="poke_normal_25">#3F9099A1</color>
+    <color name="poke_fire_25">#3FFF9C54</color>
+    <color name="poke_fighting_25">#3FCE4069</color>
+    <color name="poke_water_25">#3F4D90D5</color>
+    <color name="poke_flying_25">#3F92AADE</color>
+    <color name="poke_grass_25">#3F63BB5B</color>
+    <color name="poke_poison_25">#3FAB6AC8</color>
+    <color name="poke_eletric_25">#3FF3D23B</color>
+    <color name="poke_ground_25">#3FD97746</color>
+    <color name="poke_psychic_25">#3FF97176</color>
+    <color name="poke_rock_25">#3FC7B78B</color>
+    <color name="poke_ice_25">#3F74CEC0</color>
+    <color name="poke_bug_25">#3F90C12C</color>
+    <color name="poke_dragon_25">#3F096DC4</color>
+    <color name="poke_ghost_25">#3F5269AC</color>
+    <color name="poke_dark_25">#3F5A5366</color>
+    <color name="poke_steel_25">#3F5A8EA1</color>
+    <color name="poke_fairy_25">#3FEC8FE6</color>
 </resources>

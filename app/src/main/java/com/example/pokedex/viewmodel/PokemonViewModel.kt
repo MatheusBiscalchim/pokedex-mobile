@@ -4,6 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.pokedex.api.PokemonRepository
 import com.example.pokedex.domain.Pokemon
+import com.example.pokedex.domain.PokemonStat
 
 class PokemonViewModel : ViewModel() {
     var pokemons = MutableLiveData<List<Pokemon?>>()
@@ -32,7 +33,10 @@ class PokemonViewModel : ViewModel() {
                         pokemonApiResult.name,
                         pokemonApiResult.types.map { typeSlot ->
                             typeSlot.type
-                        }
+                        },
+                        pokemonApiResult.height,
+                        pokemonApiResult.weight,
+                        pokemonApiResult.stats
                     )
                     pokemonList.add(pokemon)
                 }
@@ -59,7 +63,10 @@ class PokemonViewModel : ViewModel() {
                         pokemonApiResult.name,
                         pokemonApiResult.types.map { typeSlot ->
                             typeSlot.type
-                        }
+                        },
+                        pokemonApiResult.height,
+                        pokemonApiResult.weight,
+                        pokemonApiResult.stats
                     )
                     pokemonList.add(pokemon)
                 }

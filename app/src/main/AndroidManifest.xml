@@ -35,6 +35,8 @@
         </activity>
         <activity android:name=".PokemonListActivity" android:exported="false"/>
         <activity android:name=".TypesActivity" android:exported="false"/>
+        <activity android:name=".FavoritesActivity" android:exported="false"/>
+        <activity android:name=".PokemonDetailsActivity" android:exported="false"/>
     </application>
 
 </manifest>

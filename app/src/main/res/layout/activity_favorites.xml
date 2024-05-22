@@ -4,7 +4,7 @@
     android:layout_width="175dp"
     android:layout_height="175dp"
     android:layout_margin="8dp"
-    android:id="@+id/cardPokemon">
+    tools:context=".FavoritesActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
             android:orientation="horizontal"
             android:gravity="end">
             <TextView
-                android:id="@+id/tvNumber"
+                android:id="@+id/pokemonIdEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/card_poke_number"
@@ -48,6 +48,10 @@
             android:textSize="20dp"
             tools:text="Charmander"/>
 
-
     </LinearLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/favoriteButton"
+        android:text="aaa"/>
 </androidx.cardview.widget.CardView>

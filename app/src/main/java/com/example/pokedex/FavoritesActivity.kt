@@ -1,3 +1,5 @@
+package com.example.pokedex
+
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
@@ -26,9 +28,9 @@ class FavoritesActivity : AppCompatActivity() {
             }
         }
 
-        binding.backButton.setOnClickListener {
-            finish()
-        }
+//        binding.backButton.setOnClickListener {
+//            finish()
+//        }
     }
 
     private fun toggleFavorite(pokemonId: String) {

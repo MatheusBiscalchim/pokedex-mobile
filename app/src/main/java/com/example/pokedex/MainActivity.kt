@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity()
         setupButtonClick(buttonTypes,TypesActivity::class.java)
         setupButtonClick(buttonLocations,TypesActivity::class.java)
         setupButtonClick(buttonMoves,TypesActivity::class.java)
-        setupButtonClick(buttonFavorites,TypesActivity::class.java)
+        setupButtonClick(buttonFavorites,FavoritesActivity::class.java)
 
 
     }
